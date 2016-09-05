@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Algebraic Calculator</title>
+		<script src="equationParser.js" type="text/javascript"></script>
+		<script src="fraction.js/fraction.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="main.css">
+	</head>
+	<body>
+		<div id="outer">
+			<div id="instructions">
+				<ul>
+					<li>This calculator will simplify or solve linear expressions/equations.</li>
+					<li>You may either type into the top section of the calculator or use the 
+					provided buttons.</li>
+					<li>To solve a system of equations, please separate each equation with a comma,
+					and ensure that the first (topmost) equation contains a copy of all variables
+					even if they have a zero-coefficient.</li>
+					<li>Press the COMPUTE button to get your answer.</li>
+				</ul>
+			</div>
+			<div id="frame">
+				<div id="contents">
+					<div id="screen">
+						<textarea id="calc-input" type="text"></textarea>
+					</div>
+					<input id="compute" type="button" class="btn-main" value="COMPUTE" onclick="document.getElementById('calc-input').value=inputHandler(document.getElementById('calc-input').value)"/>
+					<div id="btn-row-0">
+						<input id="x" type="button" class="btn ice" value="x" onclick="document.getElementById('calc-input').value+=value">
+						<input id="y" type="button" class="btn ice" value="y" onclick="document.getElementById('calc-input').value+=value">
+						<input id="z" type="button" class="btn ice" value="z" onclick="document.getElementById('calc-input').value+=value">
+						<input id="," type="button" class="btn ice" value="," onclick="document.getElementById('calc-input').value+=value">
+					</div>
+					<div id="btn-row-1">
+						<input id="(" type="button" class="btn steel" value="(" onclick="document.getElementById('calc-input').value+=value">
+						<input id=")" type="button" class="btn steel" value=")" onclick="document.getElementById('calc-input').value+=value">
+						<input id="^" type="button" class="btn steel" value="^" onclick="document.getElementById('calc-input').value+=value">
+						<input id="/" type="button" class="btn steel" value="/" onclick="document.getElementById('calc-input').value+=value">
+					</div>
+					<div id="btn-row-2">
+						<input id="7" type="button" class="btn gold" value="7" onclick="document.getElementById('calc-input').value+=value">
+						<input id="8" type="button" class="btn gold" value="8" onclick="document.getElementById('calc-input').value+=value">
+						<input id="9" type="button" class="btn gold" value="9" onclick="document.getElementById('calc-input').value+=value">
+						<input id="*" type="button" class="btn steel" value="*" onclick="document.getElementById('calc-input').value+=value">
+					</div>
+					<div id="btn-row-3">
+						<input id="4" type="button" class="btn gold" value="4" onclick="document.getElementById('calc-input').value+=value">
+						<input id="5" type="button" class="btn gold" value="5" onclick="document.getElementById('calc-input').value+=value">
+						<input id="6" type="button" class="btn gold" value="6" onclick="document.getElementById('calc-input').value+=value">
+						<input id="-" type="button" class="btn steel" value="-" onclick="document.getElementById('calc-input').value+=value">
+					</div>
+					<div id="btn-row-4">
+						<input id="1" type="button" class="btn gold" value="1" onclick="document.getElementById('calc-input').value+=value">
+						<input id="2" type="button" class="btn gold" value="2" onclick="document.getElementById('calc-input').value+=value">
+						<input id="3" type="button" class="btn gold" value="3" onclick="document.getElementById('calc-input').value+=value"/>
+						<input id="+" type="button" class="btn steel" value="+" onclick="document.getElementById('calc-input').value+=value"/>
+					</div>
+					<div id="btn-row-5">
+						<input id="clear" type="button" class="btn steel" value="Clr" onclick="document.getElementById('calc-input').value=''"/>
+						<input id="0" type="button" class="btn gold" value="0" onclick="document.getElementById('calc-input').value+=value"/>
+						<input id="." type="button" class="btn steel" value="." onclick="document.getElementById('calc-input').value+=value"/>
+						<input id="=" type="button" class="btn steel" value="=" onclick="document.getElementById('calc-input').value+=value"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

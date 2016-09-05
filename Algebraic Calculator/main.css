@@ -1,0 +1,88 @@
+body {
+	background-color: #ffd693;
+}
+
+#outer {
+	margin-top: 50px;
+	font-family: tahoma;
+	text-align: center;
+}
+
+#instructions {
+	width: 540px;
+	padding-right: 15px;
+	float: left;
+	display: inline-block;
+	font-size: 20px;
+	text-align: left;
+	background: #eeeeee;
+	border: 1px solid #333333;
+	border-radius: 5px;
+}
+
+#instructions li {
+	margin-top: 10px;
+}
+
+#frame {
+	display: inline-block;
+	position: absolute;
+	left:50%;
+	width: 320px;
+	margin-left: -171px;
+	padding: 6px;
+	background: #eeeeee;
+	border: 5px outset;
+}
+
+#contents {
+}
+
+#calc-input {
+	height: 60px;
+	width: 100%;
+	font-family: tahoma;
+	font-weight: bold;
+	font-size: 30px;
+	resize: vertical;
+	border: 4px inset;
+}
+
+.btn-main {
+	width:100%;
+	font-size: 30px;	
+	background: linear-gradient(to bottom right, #00dd00, #66ff66 55%, #66ff66 65%, #00dd00);
+	border: 2px outset;
+}
+
+.btn-main:active {
+	background: linear-gradient(to bottom right, #dd0000, #ff6666 55%, #ff6666 65%, #dd0000);
+	border: 2px solid #dd0000;
+}
+
+.btn {
+	height: 80px;
+	width: 80px;
+	float: left;
+	font-size: 30px;	
+	border: 2px outset;
+}
+
+.btn:active {
+	color: #ff0000;
+	border: 2px outset red;
+	
+}
+
+.steel {
+	background: linear-gradient(to bottom right, #a0a0a0, #dddddd 55%, #dddddd);
+}
+
+
+.gold {
+	background: linear-gradient(to bottom right, #ffdb43, #ffeb99 55%, #ffeb99);
+}
+
+.ice {
+	background: linear-gradient(to bottom right, #99ceff, #e6f3ff 55%, #e6f3ff);
+}

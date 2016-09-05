@@ -6,8 +6,7 @@
         <script src="jquery/dist/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
         <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="main.css" rel="stylesheet" title="test">
-        
+        <link href="main.css" rel="stylesheet" title="main">
         <title>Benjamin Sevey</title>
     </head>
     <body>
@@ -41,13 +40,13 @@
                     <div id="theme-selector">
                         <span class="bg-white" style="width: 100%; display: inline-block;">Select a Color Theme</span>
                         <ul>
-                            <li class="bg-white"><button value="1" onclick="myFunction(this.value)">Traditional <span class="demo" style="background-color: #EFEFEF"></span><span class="demo" style="background-color: #1E1E1E"></span><span class="demo" style="background-color: #000000"></span><span class="demo" style="background-color: #203875"></span></button></li>
-                            <li class="bg-white"><button value="2" onclick="myFunction(this.value)">Deutsch <span class="demo" style="background-color: #000000"></span><span class="demo" style="background-color: #F2F2F2"></span><span class="demo" style="background-color: #C10000"></span><span class="demo" style="background-color: #FFC637"></span></button></li>
-                            <li class="bg-white"><button value="3" onclick="myFunction(this.value)">Editor's Pick   <span class="demo" style="background-color: #444444"></span><span class="demo" style="background-color: #c9e3e5"></span><span class="demo" style="background-color: #ce5c00"></span><span class="demo" style="background-color: #009DFF"></span></button></li>
-                            <li class="bg-white"><button value="4" onclick="myFunction(this.value)">Forest  <span class="demo" style="background-color: #F9D581"></span><span class="demo" style="background-color: #284920"></span><span class="demo" style="background-color: #2D1600"></span><span class="demo" style="background-color: #53BF05"></span></button></li>
-                            <li class="bg-white"><button value="5" onclick="myFunction(this.value)">Cool Runnings   <span class="demo" style="background-color: #B2EDFF"></span><span class="demo" style="background-color: #000087"></span><span class="demo" style="background-color: #1FC482"></span><span class="demo" style="background-color: #4B2982"></span></button></li>
-                            <li class="bg-white"><button value="6" onclick="myFunction(this.value)">Love Bug    <span class="demo" style="background-color: #FF3D50"></span><span class="demo" style="background-color: #000000"></span><span class="demo" style="background-color: #2E0960"></span><span class="demo" style="background-color: #3D4055"></span></button></li>
-                            <li class="bg-white"><button value="7" onclick="myFunction(this.value)">Middle School .pptx <span class="demo" style="background-color: #FF0000"></span><span class="demo" style="background-color: #00FF26"></span><span class="demo" style="background-color: #FF00C7"></span><span class="demo" style="background-color: #42FFEF"></span></button></li>
+                            <li class="bg-white"><button value="1" onclick="updateColors(this.value)">Traditional <span class="demo" style="background-color: #EFEFEF"></span><span class="demo" style="background-color: #1E1E1E"></span><span class="demo" style="background-color: #000000"></span><span class="demo" style="background-color: #203875"></span></button></li>
+                            <li class="bg-white"><button value="2" onclick="updateColors(this.value)">Deutsch <span class="demo" style="background-color: #000000"></span><span class="demo" style="background-color: #F2F2F2"></span><span class="demo" style="background-color: #C10000"></span><span class="demo" style="background-color: #FFC637"></span></button></li>
+                            <li class="bg-white"><button value="3" onclick="updateColors(this.value)">Editor's Pick   <span class="demo" style="background-color: #444444"></span><span class="demo" style="background-color: #c9e3e5"></span><span class="demo" style="background-color: #ce5c00"></span><span class="demo" style="background-color: #009DFF"></span></button></li>
+                            <li class="bg-white"><button value="4" onclick="updateColors(this.value)">Forest  <span class="demo" style="background-color: #F9D581"></span><span class="demo" style="background-color: #284920"></span><span class="demo" style="background-color: #2D1600"></span><span class="demo" style="background-color: #53BF05"></span></button></li>
+                            <li class="bg-white"><button value="5" onclick="updateColors(this.value)">Cool Runnings   <span class="demo" style="background-color: #B2EDFF"></span><span class="demo" style="background-color: #000087"></span><span class="demo" style="background-color: #1FC482"></span><span class="demo" style="background-color: #4B2982"></span></button></li>
+                            <li class="bg-white"><button value="6" onclick="updateColors(this.value)">Love Bug    <span class="demo" style="background-color: #FF3D50"></span><span class="demo" style="background-color: #000000"></span><span class="demo" style="background-color: #2E0960"></span><span class="demo" style="background-color: #3D4055"></span></button></li>
+                            <li class="bg-white"><button value="7" onclick="updateColors(this.value)">Middle School .pptx <span class="demo" style="background-color: #FF0000"></span><span class="demo" style="background-color: #00FF26"></span><span class="demo" style="background-color: #FF00C7"></span><span class="demo" style="background-color: #42FFEF"></span></button></li>
                         </ul>
                     </div>
                 </div>
@@ -174,7 +173,7 @@
             </div>
         </div>
         <script>
-            var test;
+            var mainStyles;
                         
             $(document).ready(function() {
                 function getStyleSheet(unique_title) {
@@ -185,12 +184,12 @@
                     }
                   }
                 }
-                test = getStyleSheet("test");
+                mainStyles = getStyleSheet("main");
             });
             
-            function myFunction(value) {
+            function updateColors(value) {
                    
-                var rules = test.cssRules;
+                var rules = mainStyles.cssRules;
                 
                 var palettes = {
                     set1: {
@@ -241,12 +240,12 @@
                     for (var i=0; i<rules.length; i++) {
                         switch (rules[i].selectorText) {
                             case ".primary-color":
-                                test.deleteRule(i);
-                                test.insertRule(".primary-color {background-color: " + palettes[set].color1 + "; color: " + palettes[set].color2 +"; border: 5px solid "+ palettes[set].color3 +";}", i);
+                                mainStyles.deleteRule(i);
+                                mainStyles.insertRule(".primary-color {background-color: " + palettes[set].color1 + "; color: " + palettes[set].color2 +"; border: 5px solid "+ palettes[set].color3 +";}", i);
                                 break;
                             case ".alt-color":
-                                test.deleteRule(i);
-                                test.insertRule(".alt-color {color: " + palettes[set].color4 + ";}", i);
+                                mainStyles.deleteRule(i);
+                                mainStyles.insertRule(".alt-color {color: " + palettes[set].color4 + ";}", i);
                                 break;
                         }
                     }  

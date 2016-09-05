@@ -1,0 +1,41 @@
+<!DOCTYPE HTML5>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>The Color Of Words</title>
+		<link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="word-color.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	</head>
+	<body>
+		<div id="ui-container" class="centered">
+			<h1 id="single-word-display">DEFAULT</h1>
+			<p>Submit a word to see its color!</p>
+			<div>
+				<div>
+					<input id="single-word-input" class="highlight" type="text" placeholder="Text">
+				</div>
+				<button class="highlight" onclick="updateDisplay(document.getElementById('single-word-input').value)">Submit</button>
+			</div>
+			<p>Submit a section of text to create an image from your words!</p>
+			<div>
+				<div>
+					<textarea id="multi-word-input" class="highlight"></textarea>
+				</div>
+				<p style="font-size: 75%;">Adjust the resolution of your image.</p>
+				<div id="px-size-selector">
+					<input type="radio" name="px-size" id="r-1" value="1">1
+					<input type="radio" name="px-size" id="r-2" value="2">2
+					<input type="radio" name="px-size" id="r-5" value="5" checked>5
+					<input type="radio" name="px-size" id="r-10" value="10">10
+					<input type="radio" name="px-size" id="r-20" value="20">20
+				</div>
+				<button class="highlight" onclick="wordToImage(document.getElementById('multi-word-input').value)">Generate</button>
+				<button class="highlight" onclick="clearForm()">Clear</button>
+			</div>
+			<canvas id="complete-canvas" width="500" height="300"></canvas>
+			<canvas id="unit-canvas" width="500" height="300"></canvas>
+            <a href="../index.html">Back to Portfolio</a>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,153 @@
+body {
+    /* background.jpg used under cc-by 2.0
+        original taken from: https://commons.wikimedia.org/wiki/File:Trips_05_-_Garibaldi_-_14_-_Isoscoles_%26_Mamquam_(90953794).jpg
+        black & white filter applied to original*/
+    
+    background: url(images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Times New Roman", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oswald", sans-serif;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 150%;
+}
+
+.content {
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+.intro {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.primary-color {
+    background-color: #EFEFEF;
+    color: #1E1E1E;
+    border: 5px solid #000000;
+}
+
+.alt-color {
+    color: #203875;
+}
+
+#theme-selector {
+    color: black;
+}
+
+.bg-white {
+    background-color: white;
+    padding-left: 10px;
+}
+
+#theme-selector ul {
+    visibility: hidden;
+    list-style: none;
+    padding: 0;
+}
+
+#theme-selector:hover > ul {
+    visibility: visible;
+}
+
+#theme-selector li:hover {
+    color: white;
+    background-color: black;
+}
+
+.demo {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 2px;
+    border: 1px solid black;
+}
+
+button{
+  margin      : 0;
+  padding     : 0;
+  border      : 0;
+  background  : transparent;
+  font-family : inherit;
+  font-size   : 1em;
+  cursor      : pointer;
+  width: 100%;
+  text-align: left;
+}
+
+#navbar {
+    position: fixed;
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    padding: 10px;
+    z-index: 1;
+    top: 0px;
+    width: 100%;
+}
+
+.nav-btn { 
+    display: flex;
+}
+
+.left-edge {
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 30px solid #EFEFEF;
+}
+
+.right-edge {
+    
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid #EFEFEF;
+}
+
+.middle {
+    
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EFEFEF;
+    z-index: 2;
+    height: 40px;
+    width: 70px;
+}
+
+@media (max-width: 480px) {
+    .xs-hide, .left-edge, .right-edge {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    body {
+        font-size: 11px;
+    }
+}
+
+@media (min-width: 768px) {
+    .pull-right-sm {
+        float: right;
+    }
+}

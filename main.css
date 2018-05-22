@@ -153,3 +153,9 @@ button{
         float: right;
     }
 }
+
+@media (max-height: 630px) {
+    .intro {
+        height: 630px;
+    }
+}
